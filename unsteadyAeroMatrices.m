@@ -28,7 +28,7 @@ Kc = -pi*rho_air*V^2*b.*momentArm*VKc;
 Kw = 2*pi*rho_air*V^2*b*(psi1*eps1 + psi2*eps2) * momentArm * [1/b 0.5-a T11/(2*pi)];
 
 %% Lag-States
-W = 2*pi*rho_air*V^2*b.*momentArm*[psi1*eps1^2*V/b^2 psi2*eps2^2*V/b^2 psi1*eps1*V/b*(eps1*(1/2-a)-1) psi2*eps2*V/b*(eps2*(1/2-a)-1) psi1*eps1*V/b*(eps1*T11/(2*pi) - T10/pi) psi2*eps2*V/b*(eps2*T11/(2*pi) - T10/pi)]
+W = 2*pi*rho_air*V^2*b.*momentArm*[-psi1*eps1^2*V/b^2 -psi2*eps2^2*V/b^2 psi1*eps1*V/b*(eps1*(1/2-a)-1) psi2*eps2*V/b*(eps2*(1/2-a)-1) psi1*eps1*V/b*(eps1*T11/(2*pi) - T10/pi) psi2*eps2*V/b*(eps2*T11/(2*pi) - T10/pi)]
 
 %% Assembled Matrices
 M = Mnc

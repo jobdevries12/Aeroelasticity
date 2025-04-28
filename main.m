@@ -15,9 +15,9 @@ plotMode(eigvecC, eigvecUC);
 % unsteady aero
 eigValues = {};
 eigVectors = {};
-Vend = 375;
+Vend = 350;
 Vstep = 5;
-for V = 0:Vstep:Vend
+for V = 2.2:Vstep:Vend
     [Ma, Ca, Ka, W] = unsteadyAeroMatrices(V);
     [A] = stateSpaceA(V, MsC, Ma, Ca, Ks, Ka, W);
     

@@ -42,13 +42,13 @@ wa = 100; % [rad/s]
 wb = 300; % [rad/s]
 
 % aerodynamics
-S       = 1; % [m2] PLACEHOLDER
+S       = 2*b; % [m2] PLACEHOLDER
 q       = 1; % [Pa] PLACEHOLDER
 a0      = 0; % [rad]
 Cla     = 2*pi; 
-Clb     = 2*T10; % PLACEHOLDER (derive with Theodorson expressions)
-Cmac    = 0; % PLACEHOLDER
-Cmacb   = 1/2*(T4+T10); % PLACEHOLDER (derive with Theodorson expressions)
+Clb     = 2*T10;
+Cmac    = 0; 
+Cmacb   = -1/2*(T4+T10); 
 
 %% Lag terms
 psi1 = 0.165;

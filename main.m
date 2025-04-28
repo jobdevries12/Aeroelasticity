@@ -15,13 +15,14 @@ plotMode(eigvecC, eigvecUC);
 % unsteady aero
 eigValues = {};
 eigVectors = {};
-Vend = 350;
+Vend = 375;
 Vstep = 5;
-for V = 10:Vstep:Vend
+for V = 0:Vstep:Vend
     [Ma, Ca, Ka, W] = unsteadyAeroMatrices(V);
     [A] = stateSpaceA(V, MsC, Ma, Ca, Ks, Ka, W);
     
-    [eigValues{end+1},  eigVectors{end+1}] = eig(A)
+    eigValues{end+1} = eig(A);
+    [dummy,  eigVectors{end+1}] = eig(A);
 end
 
 plotEigVal(eigValues, 4)

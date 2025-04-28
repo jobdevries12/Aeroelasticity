@@ -1,5 +1,5 @@
 function [] = plotEigVal(eigValues, modeNumber) 
-   numModes = 5;  % Number of eigenvalues to plot
+   numModes = 6;  % Number of eigenvalues to plot
    numSteps = length(eigValues);
 
    realParts = zeros(numModes, numSteps);

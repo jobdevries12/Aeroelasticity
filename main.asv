@@ -16,12 +16,12 @@ plotMode(eigvecC, eigvecUC);
 eigValues = {};
 eigVectors = {};
 Vend = 350;
-Vstep = 10;
+Vstep = 5;
 for V = 10:Vstep:Vend
     [Ma, Ca, Ka, W] = unsteadyAeroMatrices(V);
     [A] = stateSpaceA(V, MsC, Ma, Ca, Ks, Ka, W);
     
-    [eigValues{end+1},  eigVectors{end+1}] = eig(A)
+    eigValues{end+1} = eig(A);
 end
 
 plotEigVal(eigValues, 4)

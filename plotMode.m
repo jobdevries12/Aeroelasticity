@@ -10,10 +10,10 @@ function [] = plotMode(eigvecC, eigvecUC)
         Y1 = Y0 + b*(1+a)*sin(theta);
         % hinge line
         X2 = b*(c-a)*cos(theta);
-        Y2 = Y0 - b*(1+a)*sin(theta);
+        Y2 = Y0 - b*(c-a)*sin(theta);
         % trailing edge
-        X3 = X2 + b*(1-c)*cos(beta);
-        Y3 = Y2 - b*(1-c)*sin(beta);
+        X3 = X2 + b*(1-c)*cos(theta+beta);
+        Y3 = Y2 - b*(1-c)*sin(theta+beta);
 
         X = [X1, X2, X3];
         Y = [Y1, Y2, Y3];
@@ -59,5 +59,5 @@ end
     title('Steady Aeroelastic Modes of the Typical Section')
     xlabel('x (elastic axis at x = 0)')
     ylabel('y')
-    legend({'1st Coupled Mode', '2nd Coupled Mode', '3rd Coupled Mode', '1st Uncoupled Mode', '2nd Uncoupled Mode', '3rd Uncoupled Mode'}, 'Location','southwest', NumColumns=2)
+    legend({'1st Coupled', '2nd Coupled', '3rd Coupled', '1st Uncoupled', '2nd Uncoupled', '3rd Uncoupled'}, 'Location','southwest', NumColumns=2)
 end

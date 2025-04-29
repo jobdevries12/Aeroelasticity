@@ -1,6 +1,6 @@
-function [] = plotEigVal(eigValues, modeNumber) 
-   numModes = 6;  % Number of eigenvalues to plot
-   numSteps = length(eigValues);
+function [] = plotEigVal(eigValues, numModes) 
+
+    numSteps = length(eigValues);
 
    realParts = zeros(numModes, numSteps);
    imagParts = zeros(numModes, numSteps);
@@ -17,7 +17,7 @@ function [] = plotEigVal(eigValues, modeNumber)
    colors = lines(numModes);  % Distinct colors for each mode
 
    for mode = 1:numModes
-       plot(realParts(mode, :), imagParts(mode, :), 'o', ...
+       plot(realParts(mode, :), imagParts(mode, :), '.', ...
            'Color', colors(mode, :), 'LineWidth', 2, ...
            'DisplayName', sprintf('Eigenvalue %d', mode));
    end
@@ -26,8 +26,9 @@ function [] = plotEigVal(eigValues, modeNumber)
    ylabel('Imaginary Part');
    xlim([-20 10])
    ylim([0 400])
-   title('First 10 Eigenvalues vs. Velocity');
+   %title('Eigenvalues Plotted for a Velocity Range 0m/s - 350m/s');
    grid on;
    legend show;
-   % axis equal;   % <-- REMOVE this or comment it out
+
+   hold off
 end

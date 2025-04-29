@@ -6,6 +6,6 @@ function [A] = stateSpaceA(V, Ms, Ma, Ca, Ks, Ka, W)
     I = [1 0 0; 1 0 0; 0 1 0; 0 1 0; 0 0 1; 0 0 1];
 
     A = [Mae^-1*Ca             -Mae^-1*Kae              Mae^-1*W;
-         repmat(eye(3), 2, 1)   zeros(6,3)             -W0;
-         zeros(3)               eye(3)                  zeros(3,6)]
+         eye(3)                 zeros(3)                zeros(3,6);
+         zeros(6,3)               I                      -W0];
 end

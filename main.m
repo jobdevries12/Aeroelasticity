@@ -19,6 +19,8 @@ eigValues = {};
 eigVectors = {};
 Vend = 350;
 Vstep = 0.1;
+velocities = 0:Vstep:Vend;  % Define range of velocities to sweep
+
 Vflutter = NaN; % Initialize critical velocity
 unstableDetected = false; % Flag to detect first instability
 

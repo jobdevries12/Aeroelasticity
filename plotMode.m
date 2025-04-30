@@ -43,7 +43,6 @@ for i = 1:3
     beta_i = mode(3);
     [Xuc{i}, Yuc{i}] = coordinates(h_i, theta_i, beta_i);
 end    
-
     grid on
     %axis equal
     hold on

@@ -20,7 +20,7 @@ Knc = -rho_air * b^2 * [0    0   0;
 % Theodorsen Term
 momentArm = [1;   -(1/2+a)*b;   T12*b/(2*pi)]; % moment arms to obtain lift, moment about e.a. and moment about hinge
 VCc       = [1/V  b/V*(1/2-a) b/V*1/(2*pi)*T11]; % Theodorsen unsteady terms for ciruclatory lift
-VKc       = [0    1           1/pi*T10]; % % Theodorsen steady terms for ciruclatory lift
+VKc       = [0    1           1/pi*T10]; % Theodorsen steady terms for ciruclatory lift
 
 Cc = -pi*rho_air*V^2*b.*momentArm*VCc;
 Kc = -pi*rho_air*V^2*b.*momentArm*VKc;
